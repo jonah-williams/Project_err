@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C992ED7137B6E7B00DD2CA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C992ED6137B6E7B00DD2CA7 /* Cocoa.framework */; };
+		8C992EE1137B6E7B00DD2CA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C992EDF137B6E7B00DD2CA7 /* InfoPlist.strings */; };
+		8C992EE4137B6E7B00DD2CA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C992EE3137B6E7B00DD2CA7 /* main.m */; };
+		8C992EE7137B6E7B00DD2CA7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8C992EE5137B6E7B00DD2CA7 /* Credits.rtf */; };
+		8C992EEA137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C992EE9137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.m */; };
+		8C992EED137B6E7B00DD2CA7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C992EEB137B6E7B00DD2CA7 /* MainMenu.xib */; };
+		8C992EF4137B6E7B00DD2CA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C992ED6137B6E7B00DD2CA7 /* Cocoa.framework */; };
+		8C992EFC137B6E7B00DD2CA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C992EFA137B6E7B00DD2CA7 /* InfoPlist.strings */; };
+		8C992EFF137B6E7B00DD2CA7 /* ProjectCrayonsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 8C992EFE137B6E7B00DD2CA7 /* ProjectCrayonsTests.h */; };
+		8C992F01137B6E7B00DD2CA7 /* ProjectCrayonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C992F00137B6E7B00DD2CA7 /* ProjectCrayonsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C992EF5137B6E7B00DD2CA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C992EC9137B6E7A00DD2CA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C992ED1137B6E7A00DD2CA7;
+			remoteInfo = ProjectCrayons;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8C992ED2137B6E7A00DD2CA7 /* ProjectCrayons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCrayons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C992ED6137B6E7B00DD2CA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		8C992ED9137B6E7B00DD2CA7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8C992EDA137B6E7B00DD2CA7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8C992EDB137B6E7B00DD2CA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C992EDE137B6E7B00DD2CA7 /* ProjectCrayons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjectCrayons-Info.plist"; sourceTree = "<group>"; };
+		8C992EE0137B6E7B00DD2CA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8C992EE2137B6E7B00DD2CA7 /* ProjectCrayons-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectCrayons-Prefix.pch"; sourceTree = "<group>"; };
+		8C992EE3137B6E7B00DD2CA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8C992EE6137B6E7B00DD2CA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		8C992EE8137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectCrayonsAppDelegate.h; sourceTree = "<group>"; };
+		8C992EE9137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectCrayonsAppDelegate.m; sourceTree = "<group>"; };
+		8C992EEC137B6E7B00DD2CA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8C992EF3137B6E7B00DD2CA7 /* ProjectCrayonsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectCrayonsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C992EF9137B6E7B00DD2CA7 /* ProjectCrayonsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjectCrayonsTests-Info.plist"; sourceTree = "<group>"; };
+		8C992EFB137B6E7B00DD2CA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8C992EFD137B6E7B00DD2CA7 /* ProjectCrayonsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectCrayonsTests-Prefix.pch"; sourceTree = "<group>"; };
+		8C992EFE137B6E7B00DD2CA7 /* ProjectCrayonsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectCrayonsTests.h; sourceTree = "<group>"; };
+		8C992F00137B6E7B00DD2CA7 /* ProjectCrayonsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectCrayonsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C992ECF137B6E7A00DD2CA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C992ED7137B6E7B00DD2CA7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C992EEF137B6E7B00DD2CA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C992EF4137B6E7B00DD2CA7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C992EC7137B6E7A00DD2CA7 = {
+			isa = PBXGroup;
+			children = (
+				8C992EDC137B6E7B00DD2CA7 /* ProjectCrayons */,
+				8C992EF7137B6E7B00DD2CA7 /* ProjectCrayonsTests */,
+				8C992ED5137B6E7B00DD2CA7 /* Frameworks */,
+				8C992ED3137B6E7A00DD2CA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C992ED3137B6E7A00DD2CA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C992ED2137B6E7A00DD2CA7 /* ProjectCrayons.app */,
+				8C992EF3137B6E7B00DD2CA7 /* ProjectCrayonsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C992ED5137B6E7B00DD2CA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C992ED6137B6E7B00DD2CA7 /* Cocoa.framework */,
+				8C992ED8137B6E7B00DD2CA7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C992ED8137B6E7B00DD2CA7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C992ED9137B6E7B00DD2CA7 /* AppKit.framework */,
+				8C992EDA137B6E7B00DD2CA7 /* CoreData.framework */,
+				8C992EDB137B6E7B00DD2CA7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8C992EDC137B6E7B00DD2CA7 /* ProjectCrayons */ = {
+			isa = PBXGroup;
+			children = (
+				8C992EE8137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.h */,
+				8C992EE9137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.m */,
+				8C992EEB137B6E7B00DD2CA7 /* MainMenu.xib */,
+				8C992EDD137B6E7B00DD2CA7 /* Supporting Files */,
+			);
+			path = ProjectCrayons;
+			sourceTree = "<group>";
+		};
+		8C992EDD137B6E7B00DD2CA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C992EDE137B6E7B00DD2CA7 /* ProjectCrayons-Info.plist */,
+				8C992EDF137B6E7B00DD2CA7 /* InfoPlist.strings */,
+				8C992EE2137B6E7B00DD2CA7 /* ProjectCrayons-Prefix.pch */,
+				8C992EE3137B6E7B00DD2CA7 /* main.m */,
+				8C992EE5137B6E7B00DD2CA7 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C992EF7137B6E7B00DD2CA7 /* ProjectCrayonsTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C992EFE137B6E7B00DD2CA7 /* ProjectCrayonsTests.h */,
+				8C992F00137B6E7B00DD2CA7 /* ProjectCrayonsTests.m */,
+				8C992EF8137B6E7B00DD2CA7 /* Supporting Files */,
+			);
+			path = ProjectCrayonsTests;
+			sourceTree = "<group>";
+		};
+		8C992EF8137B6E7B00DD2CA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C992EF9137B6E7B00DD2CA7 /* ProjectCrayonsTests-Info.plist */,
+				8C992EFA137B6E7B00DD2CA7 /* InfoPlist.strings */,
+				8C992EFD137B6E7B00DD2CA7 /* ProjectCrayonsTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C992ED1137B6E7A00DD2CA7 /* ProjectCrayons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C992F04137B6E7B00DD2CA7 /* Build configuration list for PBXNativeTarget "ProjectCrayons" */;
+			buildPhases = (
+				8C992ECE137B6E7A00DD2CA7 /* Sources */,
+				8C992ECF137B6E7A00DD2CA7 /* Frameworks */,
+				8C992ED0137B6E7A00DD2CA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectCrayons;
+			productName = ProjectCrayons;
+			productReference = 8C992ED2137B6E7A00DD2CA7 /* ProjectCrayons.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C992EF2137B6E7B00DD2CA7 /* ProjectCrayonsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C992F07137B6E7B00DD2CA7 /* Build configuration list for PBXNativeTarget "ProjectCrayonsTests" */;
+			buildPhases = (
+				8C992EEE137B6E7B00DD2CA7 /* Sources */,
+				8C992EEF137B6E7B00DD2CA7 /* Frameworks */,
+				8C992EF0137B6E7B00DD2CA7 /* Resources */,
+				8C992EF1137B6E7B00DD2CA7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C992EF6137B6E7B00DD2CA7 /* PBXTargetDependency */,
+			);
+			name = ProjectCrayonsTests;
+			productName = ProjectCrayonsTests;
+			productReference = 8C992EF3137B6E7B00DD2CA7 /* ProjectCrayonsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C992EC9137B6E7A00DD2CA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Carbon Five";
+			};
+			buildConfigurationList = 8C992ECC137B6E7A00DD2CA7 /* Build configuration list for PBXProject "ProjectCrayons" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8C992EC7137B6E7A00DD2CA7;
+			productRefGroup = 8C992ED3137B6E7A00DD2CA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C992ED1137B6E7A00DD2CA7 /* ProjectCrayons */,
+				8C992EF2137B6E7B00DD2CA7 /* ProjectCrayonsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C992ED0137B6E7A00DD2CA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C992EE1137B6E7B00DD2CA7 /* InfoPlist.strings in Resources */,
+				8C992EE7137B6E7B00DD2CA7 /* Credits.rtf in Resources */,
+				8C992EED137B6E7B00DD2CA7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C992EF0137B6E7B00DD2CA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C992EFC137B6E7B00DD2CA7 /* InfoPlist.strings in Resources */,
+				8C992EFF137B6E7B00DD2CA7 /* ProjectCrayonsTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C992EF1137B6E7B00DD2CA7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C992ECE137B6E7A00DD2CA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C992EE4137B6E7B00DD2CA7 /* main.m in Sources */,
+				8C992EEA137B6E7B00DD2CA7 /* ProjectCrayonsAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C992EEE137B6E7B00DD2CA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C992F01137B6E7B00DD2CA7 /* ProjectCrayonsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C992EF6137B6E7B00DD2CA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C992ED1137B6E7A00DD2CA7 /* ProjectCrayons */;
+			targetProxy = 8C992EF5137B6E7B00DD2CA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8C992EDF137B6E7B00DD2CA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C992EE0137B6E7B00DD2CA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8C992EE5137B6E7B00DD2CA7 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C992EE6137B6E7B00DD2CA7 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		8C992EEB137B6E7B00DD2CA7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C992EEC137B6E7B00DD2CA7 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		8C992EFA137B6E7B00DD2CA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C992EFB137B6E7B00DD2CA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C992F02137B6E7B00DD2CA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8C992F03137B6E7B00DD2CA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8C992F05137B6E7B00DD2CA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectCrayons/ProjectCrayons-Prefix.pch";
+				INFOPLIST_FILE = "ProjectCrayons/ProjectCrayons-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8C992F06137B6E7B00DD2CA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectCrayons/ProjectCrayons-Prefix.pch";
+				INFOPLIST_FILE = "ProjectCrayons/ProjectCrayons-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8C992F08137B6E7B00DD2CA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectCrayons.app/Contents/MacOS/ProjectCrayons";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectCrayonsTests/ProjectCrayonsTests-Prefix.pch";
+				INFOPLIST_FILE = "ProjectCrayonsTests/ProjectCrayonsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		8C992F09137B6E7B00DD2CA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectCrayons.app/Contents/MacOS/ProjectCrayons";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectCrayonsTests/ProjectCrayonsTests-Prefix.pch";
+				INFOPLIST_FILE = "ProjectCrayonsTests/ProjectCrayonsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C992ECC137B6E7A00DD2CA7 /* Build configuration list for PBXProject "ProjectCrayons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C992F02137B6E7B00DD2CA7 /* Debug */,
+				8C992F03137B6E7B00DD2CA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C992F04137B6E7B00DD2CA7 /* Build configuration list for PBXNativeTarget "ProjectCrayons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C992F05137B6E7B00DD2CA7 /* Debug */,
+				8C992F06137B6E7B00DD2CA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C992F07137B6E7B00DD2CA7 /* Build configuration list for PBXNativeTarget "ProjectCrayonsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C992F08137B6E7B00DD2CA7 /* Debug */,
+				8C992F09137B6E7B00DD2CA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C992EC9137B6E7A00DD2CA7 /* Project object */;
+}

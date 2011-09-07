@@ -1,11 +1,89 @@
 grammar Pbxproj
 
-  rule expression
-    [a-zA-Z0-9]+ ';'
+  rule pbx_file_content
+    (end_of_line_comment / c_comment / dictionary / whitespace)*
   end
 
+  rule end_of_line_comment
+    '//' 
+    (!crlf .)* 
+    (crlf / !.)
+  end
+  
+  rule c_comment
+    '/*' 
+    ( 
+      !'*/' 
+      (. / crlf) 
+    )* 
+    '*/'
+  end
+  
+  rule dictionary
+    '{' 
+    assignment* 
+    whitespace* 
+    '}'
+  end
+  
+  rule assignment
+    whitespace* 
+    value 
+    whitespace* 
+    c_comment? 
+    whitespace* 
+    '=' 
+    whitespace* 
+    (dictionary / array / value) 
+    whitespace* 
+    c_comment? 
+    ';'
+    whitespace*
+  end
+  
+  rule array
+    '(' 
+    whitespace* 
+    (value (whitespace* c_comment)? ',' whitespace*)* 
+    whitespace* 
+    ')'
+  end
+  
+  rule value
+    literal / string
+  end
+  
+  rule literal
+    [a-zA-Z0-9_]+
+  end
+  
+  rule string
+    ["]
+    (!["] .)*
+    ["]
+  end
+  
+  rule whitespace
+    [\s] / crlf
+  end
+    
+  rule crlf 
+    "\r\n" / "\n"
+  end
 end
- 
+
+# end of line comment
+# array
+# dictionary
+# value
+# string
+# inline comment
+# identifier
+
+# rule expression
+#   [a-zA-Z0-9]+ ';'
+# end
+#  
 # rule assignment
 #   value '=' value
 # end
