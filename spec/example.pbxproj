@@ -1,0 +1,26 @@
+// !$*UTF8*$! /* file header */
+/* comment */
+{}; /* empty hash */
+{ /* comment in hash */ };
+
+{
+  archiveVersion = 1;
+  classes = {
+  };
+  objectVersion = 45;
+};
+
+{
+  10108AE9131FF8F8001848A5 /* ConnectorCategoriesItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 10108AE8131FF8F8001848A5 /* ConnectorCategoriesItems.m */; };
+};
+
+C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tap Hotel" */ = {
+	isa = XCConfigurationList;
+	buildConfigurations = (
+		C01FCF4F08A954540054247B /* Debug */,
+		C01FCF5008A954540054247B /* Release */,
+		E22E41D81281F13F006A09EA /* Distribution */,
+	);
+	defaultConfigurationIsVisible = 0;
+	defaultConfigurationName = Release;
+};

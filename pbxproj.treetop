@@ -1,0 +1,19 @@
+grammar Pbxproj
+
+  rule expression
+    [a-zA-Z0-9]+ ';'
+  end
+
+end
+ 
+# rule assignment
+#   value '=' value
+# end
+# 
+# rule hash
+#   '{' assignment '}'
+# end
+# 
+# rule array
+#   '(' value / hash ','? ')'
+# end
