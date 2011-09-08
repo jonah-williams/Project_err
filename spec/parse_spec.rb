@@ -90,6 +90,19 @@ END_PBXPROJ_CONTENT
 }
 END_PBXPROJ_CONTENT
     end
+    
+    it "parses an array containing a dictionary" do
+      must_parse <<'END_PBXPROJ_CONTENT'
+{
+  projectReferences = (
+		{
+			ProductGroup = 93531FAC12E14FB800FE8499 /* Products */;
+			ProjectRef = 93531FAB12E14FB800FE8499 /* stuff.xcodeproj */;
+		},
+	);
+}
+END_PBXPROJ_CONTENT
+    end
   end
   
   describe "project file" do

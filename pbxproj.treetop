@@ -48,7 +48,7 @@ grammar Pbxproj
   rule array
     '(' 
     whitespace* 
-    (value (whitespace* c_comment)? ',' whitespace*)* 
+    ((value / dictionary) (whitespace* c_comment)? ',' whitespace*)* 
     whitespace* 
     ')'
   end
