@@ -21,7 +21,11 @@ grammar Pbxproj
   
   rule dictionary
     '{' 
-    assignment* 
+    (
+      (whitespace* c_comment whitespace*)?
+      assignment
+      (whitespace* c_comment whitespace*)?
+    )*
     whitespace* 
     '}'
   end
@@ -54,12 +58,12 @@ grammar Pbxproj
   end
   
   rule literal
-    [a-zA-Z0-9_]+
+    [a-zA-Z0-9_\.\/]+
   end
   
   rule string
     ["]
-    (!["] .)*
+    ('\"' / !["] .)*
     ["]
   end
   
@@ -71,27 +75,3 @@ grammar Pbxproj
     "\r\n" / "\n"
   end
 end
-
-# end of line comment
-# array
-# dictionary
-# value
-# string
-# inline comment
-# identifier
-
-# rule expression
-#   [a-zA-Z0-9]+ ';'
-# end
-#  
-# rule assignment
-#   value '=' value
-# end
-# 
-# rule hash
-#   '{' assignment '}'
-# end
-# 
-# rule array
-#   '(' value / hash ','? ')'
-# end

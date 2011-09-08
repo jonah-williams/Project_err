@@ -51,19 +51,19 @@ END_PBXPROJ_CONTENT
     it "parses nested dictionaries" do
       must_parse <<END_PBXPROJ_CONTENT
 {
-  archiveVersion = 1;
+  archive/Version = 1;
   classes = {
     nestedHash = true;
   };
-  objectVersion = 45;
+  object.version = 45;
 }
 END_PBXPROJ_CONTENT
     end
     
     it "parses dictionaries with string keys" do
-      must_parse <<END_PBXPROJ_CONTENT
+      must_parse <<'END_PBXPROJ_CONTENT'
 {
-  "valueWithStringEscapedCharacters[foo=bar]{}--;;()" = 1;
+  "valueWithStringEscapedCharacters[foo=bar]{}--;;()\"andStuff" = 1;
   "value with some spaces" = 45;
 }
 END_PBXPROJ_CONTENT
@@ -89,6 +89,13 @@ END_PBXPROJ_CONTENT
   );
 }
 END_PBXPROJ_CONTENT
+    end
+  end
+  
+  describe "project file" do
+    it "parses an example project" do
+      content = File.read('spec/example_project.pbxproj')
+      must_parse content
     end
   end
 end
