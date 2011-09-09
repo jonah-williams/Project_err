@@ -14,7 +14,7 @@ class Parser
     tree = @@parser.parse(data)
     
     if tree
-      self.print_tree(tree)
+      puts tree.to_s
       puts ""
     end
     
@@ -23,14 +23,5 @@ class Parser
   
   def self.failure
     "Parse error: #{@@parser.failure_reason}"
-  end
-  
-  private
-  
-  def self.print_tree(root_node, indentation = 0)
-    puts "#{' '*indentation} #{root_node}"
-    root_node.pbx_elements.each do |node| 
-      self.print_tree(node, indentation + 1)
-    end
   end
 end
