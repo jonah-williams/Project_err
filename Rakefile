@@ -1,7 +1,5 @@
 require 'rake/testtask'
 
-# http://emilloer.com/2011/08/15/dealing-with-project-dot-pbxproj-in-ruby/
-
 namespace :project do
   desc "describe the project"
   task :print, [:project_file] do |task, args|
