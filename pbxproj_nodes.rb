@@ -1,55 +1,48 @@
 module Pbxproj
-  class PbxProject < Treetop::Runtime::SyntaxNode
-    def description
-      "Project"
+  class PbxNode < Treetop::Runtime::SyntaxNode
+    def to_s
+      self.class.name
+    end
+    
+    def pbx_elements
+      pbx_elements = []
+      search_elements = Array.new(elements)
+      while !search_elements.empty?
+        e = search_elements.delete_at 0
+        if e.class.name != "Treetop::Runtime::SyntaxNode"
+          pbx_elements << e
+        else
+          search_elements = e.elements + search_elements unless e.terminal?
+        end
+      end
+      pbx_elements
     end
   end
   
-  class PbxEndOfLineComment < Treetop::Runtime::SyntaxNode
-    def description
-      self.text_value
-    end
+  class PbxProject < PbxNode
   end
   
-  class PbxComment < Treetop::Runtime::SyntaxNode
-    def description
-      self.text_value
-    end
+  class PbxEndOfLineComment < PbxNode
   end
   
-  class PbxDictionary < Treetop::Runtime::SyntaxNode
-    def description
-      "{}"
-    end
+  class PbxComment < PbxNode
   end
   
-  class PbxArray < Treetop::Runtime::SyntaxNode
-    def description
-      "()"
-    end
+  class PbxDictionary < PbxNode
   end
   
-  class PbxAssignment < Treetop::Runtime::SyntaxNode
-    def description
-      "="
-    end
+  class PbxArray < PbxNode
   end
   
-  class PbxValue < Treetop::Runtime::SyntaxNode
-    def description
-      self.text_value
-    end
+  class PbxAssignment < PbxNode
   end
   
-  class PbxLiteral < Treetop::Runtime::SyntaxNode
-    def description
-      self.text_value
-    end
+  class PbxValue < PbxNode
   end
   
-  class PbxString < Treetop::Runtime::SyntaxNode
-    def description
-      self.text_value
-    end
+  class PbxLiteral < PbxNode
+  end
+  
+  class PbxString < PbxNode
   end
 end

@@ -28,18 +28,9 @@ class Parser
   private
   
   def self.print_tree(root_node, indentation = 0)
-    return if(root_node.elements.nil?)
-    unless (root_node.class.name == "Treetop::Runtime::SyntaxNode")
-      tv = root_node.description
-      tv = "...#{tv[-40..-1]}" if tv.size > 40
-      puts "#{' '*indentation} #{tv}"
-    end
-    root_node.elements.each do |node| 
-      next_indentation = indentation
-      unless (node.class.name == "Treetop::Runtime::SyntaxNode")
-        next_indentation = indentation + 1
-      end
-      self.print_tree(node, next_indentation)
+    puts "#{' '*indentation} #{root_node}"
+    root_node.pbx_elements.each do |node| 
+      self.print_tree(node, indentation + 1)
     end
   end
 end
