@@ -1,13 +1,13 @@
 grammar Pbxproj
 
   rule pbx_file_content
-    (end_of_line_comment / c_comment / dictionary / whitespace)*
+    (end_of_line_comment / c_comment / dictionary / whitespace)* <PbxProject>
   end
 
   rule end_of_line_comment
     '//' 
     (!crlf .)* 
-    (crlf / !.)
+    (crlf / !.) <PbxEndOfLineComment>
   end
   
   rule c_comment
@@ -16,7 +16,7 @@ grammar Pbxproj
       !'*/' 
       (. / crlf) 
     )* 
-    '*/'
+    '*/' <PbxComment>
   end
   
   rule dictionary
@@ -27,7 +27,7 @@ grammar Pbxproj
       (whitespace* c_comment whitespace*)?
     )*
     whitespace* 
-    '}'
+    '}' <PbxDictionary>
   end
   
   rule assignment
@@ -42,7 +42,7 @@ grammar Pbxproj
     whitespace* 
     c_comment? 
     ';'
-    whitespace*
+    whitespace* <PbxAssignment>
   end
   
   rule array
@@ -50,7 +50,7 @@ grammar Pbxproj
     whitespace* 
     ((value / dictionary) (whitespace* c_comment)? ',' whitespace*)* 
     whitespace* 
-    ')'
+    ')' <PbxArray>
   end
   
   rule value
@@ -58,13 +58,13 @@ grammar Pbxproj
   end
   
   rule literal
-    [a-zA-Z0-9_\.\/]+
+    [a-zA-Z0-9_\.\/]+ <PbxLiteral>
   end
   
   rule string
     ["]
     ('\"' / !["] .)*
-    ["]
+    ["] <PbxString>
   end
   
   rule whitespace
