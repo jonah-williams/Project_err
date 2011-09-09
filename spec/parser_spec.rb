@@ -16,8 +16,8 @@ describe Parser do
       content = File.read(File.expand_path('example_project.pbxproj', File.dirname(__FILE__)))
       assert content != nil
       tree = Parser.parse(content)
-      assert tree != nil
-      assert tree.class.name == "Pbxproj::PbxProject"
+      assert tree != nil, "should create a parse tree"
+      assert tree.class.name == "Pbxproj::PbxProject", "root node should be a PbxProject"
     end
   end
   

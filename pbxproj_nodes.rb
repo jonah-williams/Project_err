@@ -1,5 +1,5 @@
 module Pbxproj
-  class PbxProject  < Treetop::Runtime::SyntaxNode
+  class PbxProject < Treetop::Runtime::SyntaxNode
     def description
       "Project"
     end
@@ -17,31 +17,37 @@ module Pbxproj
     end
   end
   
-  class PbxDictionary  < Treetop::Runtime::SyntaxNode
+  class PbxDictionary < Treetop::Runtime::SyntaxNode
     def description
       "{}"
     end
   end
   
-  class PbxArray  < Treetop::Runtime::SyntaxNode
+  class PbxArray < Treetop::Runtime::SyntaxNode
     def description
       "()"
     end
   end
   
-  class PbxAssignment  < Treetop::Runtime::SyntaxNode
+  class PbxAssignment < Treetop::Runtime::SyntaxNode
     def description
       "="
     end
   end
   
-  class PbxLiteral  < Treetop::Runtime::SyntaxNode
+  class PbxValue < Treetop::Runtime::SyntaxNode
     def description
       self.text_value
     end
   end
   
-  class PbxString  < Treetop::Runtime::SyntaxNode
+  class PbxLiteral < Treetop::Runtime::SyntaxNode
+    def description
+      self.text_value
+    end
+  end
+  
+  class PbxString < Treetop::Runtime::SyntaxNode
     def description
       self.text_value
     end
