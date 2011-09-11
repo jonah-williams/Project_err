@@ -1,7 +1,7 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 
-require File.expand_path(File.join('..', 'parser.rb'), File.dirname(__FILE__))
+require File.expand_path(File.join('..', 'lib/parser.rb'), File.dirname(__FILE__))
 
 module MiniTest::Assertions
   def assert_parses(content)    
