@@ -1,7 +1,7 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 
-require File.expand_path(File.join('..', 'lib/target.rb'), File.dirname(__FILE__))
+# require File.expand_path(File.join('..', 'lib/target.rb'), File.dirname(__FILE__))
 
 class Target
 end

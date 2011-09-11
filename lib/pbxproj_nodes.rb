@@ -1,9 +1,5 @@
 module Pbxproj
-  class PbxNode < Treetop::Runtime::SyntaxNode
-    def to_s
-      to_indented_s
-    end
-    
+  class PbxNode < Treetop::Runtime::SyntaxNode    
     def pbx_elements
       pbx_elements = []
       search_elements = Array.new(elements)
@@ -17,32 +13,15 @@ module Pbxproj
       end
       pbx_elements
     end
-    
-    def to_indented_s(indentation_level = 0)
-      self.class.name
-    end
-    
-    def indent(indentation_level = 0)
-      ' ' * indentation_level
-    end
   end
   
   class PbxProject < PbxNode
-    def to_indented_s(indentation_level = 0)
-      'Project' << "\n" << pbx_elements.map{|e| e.to_indented_s(indentation_level)}.join("\n")
-    end
   end
   
   class PbxEndOfLineComment < PbxNode
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + text_value
-    end
   end
   
   class PbxComment < PbxNode
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + text_value
-    end
   end
   
   class PbxDictionary < PbxNode
@@ -56,9 +35,9 @@ module Pbxproj
       c = pbx_elements.last
       c.class == PbxComment ? c : nil
     end
-    
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + ("{\n" + contents.map{|c| c.to_indented_s(indentation_level + 1)}.join(";\n") + "\n" + indent(indentation_level) + "}" + ' ' + comment.to_s).strip
+        
+    def [](key)
+      self.pbx_elements.select{|e| e.class == PbxAssignment}.select{|a| a.variable.value.to_s == key}
     end
   end
   
@@ -72,11 +51,7 @@ module Pbxproj
     def comment
       c = pbx_elements.last
       c.class == PbxComment ? c : nil
-    end
-    
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + ('(' + contents.map(&:to_s).join(', ') + ')' + ' ' + comment.to_s).strip
-    end
+    end    
   end
   
   class PbxAssignment < PbxNode
@@ -86,11 +61,7 @@ module Pbxproj
     
     def assigned_value
       pbx_elements.last
-    end
-    
-    def to_indented_s(indentation_level = 0)
-      variable.to_indented_s(indentation_level) + ' = ' + assigned_value.to_indented_s(indentation_level)
-    end
+    end    
   end
   
   class PbxValue < PbxNode
@@ -101,21 +72,11 @@ module Pbxproj
     def comment
       pbx_elements.select{|e| e.class == PbxComment}.first
     end
-    
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + (value.to_s + ' ' + comment.to_s).strip
-    end
   end
   
   class PbxLiteral < PbxNode
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + text_value
-    end
   end
   
   class PbxString < PbxNode
-    def to_indented_s(indentation_level = 0)
-      indent(indentation_level) + text_value
-    end
   end
 end
