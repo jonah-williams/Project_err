@@ -25,6 +25,16 @@ module Pbxproj
     def comments
       pbx_elements.select{ |e| [Pbxproj::PbxComment, Pbxproj::PbxEndOfLineComment].include? e.class}
     end
+    
+    def targets
+      targets = []
+      root_dictionary['objects'].each do |key, value|
+        if (value.class == Pbxproj::PbxDictionary) && (value['isa'].to_s == "PBXNativeTarget")
+          targets << PbxTarget.new(value)
+        end
+      end
+      targets
+    end
   end
   
   class PbxEndOfLineComment < PbxNode
@@ -68,6 +78,11 @@ module Pbxproj
       keys.each do |key|
         yield key, self[key]
       end
+    end
+  end
+  
+  class PbxTarget
+    def initialize(pbx_dict)
     end
   end
   
