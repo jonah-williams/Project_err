@@ -90,6 +90,12 @@ module Pbxproj
     def [](index)
       contents[index]
     end
+    
+    def each(&block)
+      contents.each do |element|
+        yield element
+      end
+    end
   end
   
   class PbxAssignment < PbxNode

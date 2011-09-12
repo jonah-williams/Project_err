@@ -51,6 +51,14 @@ END_PBXPROJ_CONTENT
   
   describe "each" do
     it "iterates over the contents of the array" do
+      content_values = []
+      content_classes = []
+      @array_node.each do |element|
+        content_values << element.value
+        content_classes << element.class
+      end
+      content_values.must_equal ["C01FCF4F08A954540054247B", "C01FCF5008A954540054247B", "E22E41D81281F13F006A09EA"]
+      content_classes.must_equal [Pbxproj::PbxValue, Pbxproj::PbxValue, Pbxproj::PbxValue]
     end
   end
   
