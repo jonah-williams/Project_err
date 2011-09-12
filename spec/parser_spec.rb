@@ -23,20 +23,20 @@ describe Parser do
   
   describe "comments" do
     it "parses end of line comments" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 // !$*UTF8*$! /* file header */
 //
 END_PBXPROJ_CONTENT
     end
     
     it "parses c comments" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 /* comment */
 END_PBXPROJ_CONTENT
     end
     
     it "parses commented value" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 {value /* comment */ = otherValue /* comment */;}
 END_PBXPROJ_CONTENT
     end
@@ -44,13 +44,13 @@ END_PBXPROJ_CONTENT
  
   describe "dictionaries" do
     it "parses an empty dictionary" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 {} /* empty hash */
 END_PBXPROJ_CONTENT
     end
 
     it "parses nested dictionaries" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 {
   archive/Version = 1;
   classes = {
@@ -73,7 +73,7 @@ END_PBXPROJ_CONTENT
   
   describe "arrays" do
     it "parses an empty array" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 {
   foo = ();
 }
@@ -81,7 +81,7 @@ END_PBXPROJ_CONTENT
     end
     
     it "parses an array" do
-      assert_parses <<END_PBXPROJ_CONTENT
+      assert_parses <<'END_PBXPROJ_CONTENT'
 {
   buildConfigurations = (
     C01FCF4F08A954540054247B /* Debug */,

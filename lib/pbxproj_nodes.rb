@@ -26,15 +26,74 @@ module Pbxproj
       pbx_elements.select{ |e| [Pbxproj::PbxComment, Pbxproj::PbxEndOfLineComment].include? e.class}
     end
     
+    def build_files
+      objects_of_type "PBXBuildFile"
+    end
+    
+    def container_item_proxies
+      objects_of_type "PBXContainerItemProxy"
+    end
+    
+    def file_references
+      objects_of_type "PBXFileReference"
+    end
+    
+    def framework_build_phases
+      objects_of_type "PBXFrameworksBuildPhase"
+    end
+    
+    def resources_build_phases
+      objects_of_type "PBXResourcesBuildPhase"
+    end
+    
+    def groups
+      objects_of_type "PBXGroup"
+    end
+    
     def targets
-      targets = []
+      objects_of_type "PBXNativeTarget"
+    end
+    
+    def project_settings
+      objects_of_type "PBXProject"
+    end
+    
+    def shell_script_build_phases
+      objects_of_type "PBXShellScriptBuildPhase"
+    end
+    
+    def sources_build_phases
+      objects_of_type "PBXSourcesBuildPhase"
+    end
+    
+    def target_dependencies
+      objects_of_type "PBXTargetDependency"
+    end
+    
+    def variant_groups
+      objects_of_type "PBXVariantGroup"
+    end
+    
+    def build_configurations
+      objects_of_type "XCBuildConfiguration"
+    end
+    
+    def configuration_lists
+      objects_of_type "XCConfigurationList"
+    end
+    
+    private
+    
+    def objects_of_type(type)
+      objects = []
       root_dictionary['objects'].each do |key, value|
-        if (value.class == Pbxproj::PbxDictionary) && (value['isa'].to_s == "PBXNativeTarget")
-          targets << PbxTarget.new(value)
+        if (value.class == Pbxproj::PbxDictionary) && (value['isa'].to_s == type.to_s)
+          objects << PbxTarget.new(value)
         end
       end
-      targets
+      objects
     end
+    
   end
   
   class PbxEndOfLineComment < PbxNode
