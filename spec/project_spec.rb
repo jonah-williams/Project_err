@@ -40,15 +40,15 @@ end
 describe Project do
   describe "given a pbxproj node" do
     before do
-      content = File.read(File.expand_path("fixtures/Valid\ Example\ Project/Valid\ Example\ Project.xcodeproj/project.pbxproj", File.dirname(__FILE__)))
-      project_node = Parser.parse(content)
-      project_node.must_be_instance_of Pbxproj::PbxProject
-      @project = Project.new(project_node)
-      
-      content = File.read(File.expand_path('example_project.pbxproj', File.dirname(__FILE__)))
-      project_node = Parser.parse(content)
-      project_node.must_be_instance_of Pbxproj::PbxProject
-      @invalid_project = Project.new(project_node)
+      # content = File.read(File.expand_path("fixtures/Valid\ Example\ Project/Valid\ Example\ Project.xcodeproj/project.pbxproj", File.dirname(__FILE__)))
+      # project_node = Parser.parse(content)
+      # project_node.must_be_instance_of Pbxproj::PbxProject
+      # @project = Project.new(project_node)
+      # 
+      # content = File.read(File.expand_path('example_project.pbxproj', File.dirname(__FILE__)))
+      # project_node = Parser.parse(content)
+      # project_node.must_be_instance_of Pbxproj::PbxProject
+      # @invalid_project = Project.new(project_node)
     end
     
     describe "project comments" do

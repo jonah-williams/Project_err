@@ -26,14 +26,14 @@ END_PBXPROJ_CONTENT
     describe "given an index with the array's bounds" do
       it "returns the node at that index" do
         result = @array_node[1]
-        result.must_be_instance_of Pbxproj::Pbxvalue
+        result.must_be_instance_of Pbxproj::PbxValue
         result.to_s.must_equal "C01FCF5008A954540054247B"
       end
     end
     describe "given a negative index" do
       it "indexes from the end of the array" do
         result = @array_node[-1]
-        result.must_be_instance_of Pbxproj::Pbxvalue
+        result.must_be_instance_of Pbxproj::PbxValue
         result.to_s.must_equal "E22E41D81281F13F006A09EA"
       end
     end

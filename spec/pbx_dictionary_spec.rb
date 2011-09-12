@@ -15,13 +15,13 @@ END_PBXPROJ_CONTENT
     
     project_node = Parser.parse(content)
     project_node.must_be_instance_of Pbxproj::PbxProject
-    @dictionary_node = project_node.root_dictionary.first
+    @dictionary_node = project_node.root_dictionary
     @dictionary_node.must_be_instance_of Pbxproj::PbxDictionary
   end
   
   describe "keys" do
     it "returns an ordered array of string keys" do
-      @dictionary_node.keys.must_equal ["value", "value with some spaces"]
+      @dictionary_node.keys.must_equal ["value", "\"value with some spaces\""]
     end
   end
   
@@ -33,8 +33,8 @@ END_PBXPROJ_CONTENT
         keys << k
         value_classes << v.class
       end
-      keys.must_equal ["value", "value with some spaces"]
-      values.must_equal [Pbxproj::PbxValue, Pbxproj::PbxValue]
+      keys.must_equal ["value", "\"value with some spaces\""]
+      value_classes.must_equal [Pbxproj::PbxValue, Pbxproj::PbxValue]
     end
   end
   
@@ -42,7 +42,7 @@ END_PBXPROJ_CONTENT
     describe "with a valid key" do
       it "returns the value node for the given key" do
         result = @dictionary_node["value"]
-        result.must_be_instance_of Pbxproh::PbxValue
+        result.must_be_instance_of Pbxproj::PbxValue
         result.to_s.must_equal "otherValue"
       end
     end
