@@ -15,6 +15,18 @@ module Pbxproj
       end
       @pbx_elements
     end
+    
+    def content_match?(other)
+      self == other
+    end
+    
+    def ==(other)
+      (other.is_a? PbxNode) && (self.text_value == other.text_value)
+    end
+    
+    def eql?(other)
+      (self.class == other.class) && (self == other)
+    end
   end
   
   class PbxProject < PbxNode
@@ -179,7 +191,15 @@ module Pbxproj
     
     def assigned_value
       pbx_elements.last
-    end    
+    end
+    
+    def content_match?(other)
+      (self == other) ||
+      (other.instance_of(self.class) && 
+        ((self.variable.value == other.variable.value) || 
+        (self.variable.comment == other.variable.comment))
+      )
+    end
   end
   
   class PbxValue < PbxNode
