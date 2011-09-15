@@ -212,14 +212,14 @@ END_PBXPROJ_CONTENT
     
     describe "groups" do
       describe "list" do
+        it "lists groups" do
+          skip "PENDING"
+        end
       end
       describe "sort" do
-      end
-      describe "reorder" do
-      end
-      describe "add" do
-      end
-      describe "remove" do
+        it "sorts groups" do
+          skip "PENDING"
+        end
       end
     end
   
@@ -829,21 +829,6 @@ END_PBXPROJ_CONTENT
 END_PBXPROJ_CONTENT
       @project = Parser.parse(content)
       @project.must_be_instance_of Pbxproj::PbxProject
-    end
-  end
-  
-  describe "validation" do
-    describe "associating spec targets with the targets they test" do
-      describe "find missing resources" do
-      end
-    end
-    describe "associating test targets with the targets they test" do
-      describe "find missing resources" do
-      end
-    end
-    describe "associating SenTestKit targets with the targets they test" do
-      describe "find redundant resources" do
-      end
     end
   end
 end

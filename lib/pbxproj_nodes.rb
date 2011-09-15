@@ -63,7 +63,7 @@ module Pbxproj
     end
     
     def targets
-      objects_of_type "PBXNativeTarget"
+      objects_of_type("PBXNativeTarget").map {|target| PbxTarget.new(target, self)}
     end
     
     def project_settings
@@ -100,7 +100,7 @@ module Pbxproj
       objects = []
       root_dictionary['objects'].each do |key, value|
         if (value.class == Pbxproj::PbxDictionary) && (value['isa'].to_s == type.to_s)
-          objects << PbxTarget.new(value)
+          objects << value
         end
       end
       objects
@@ -153,7 +153,49 @@ module Pbxproj
   end
   
   class PbxTarget
-    def initialize(pbx_dict)
+    attr_accessor :target
+    attr_accessor :project
+    def initialize(target, project)
+      @target = target
+      @project = project
+    end
+    
+    def summary
+      summary = target[:name].value << "\n"
+      summary << "\t"*2 << "Builds a #{target[:productType]}\n"
+      summary << "\n"
+      
+      summary << "\t"*2 << "Build phases:\n"
+      target[:buildPhases].each do |build_phase_id|
+        build_phase = @project.root_dictionary[:objects][build_phase_id.value]
+        summary << "\t"*3 << "#{build_phase[:isa].value}\n"
+        build_phase[:files].each do |file_id|
+          file_ref_id = @project.root_dictionary[:objects][file_id.value][:fileRef]
+          file = @project.root_dictionary[:objects][file_ref_id.value]
+          file_path = file[:path]
+          summary << "\t"*4
+          if file_path
+            summary << file_path.value
+          else
+            summary << file[:name].value
+          end
+          summary << "\n"
+        end
+      end
+      
+      summary << "\t"*2 << "Build rules:\n"
+      target[:buildRules].each do |build_rule_id|
+        summary << "\t"*3 << build_rule_id.value
+      end
+      
+      summary << "\t"*2 << "Dependencies:\n"
+      target[:dependencies].each do |dependency_id|
+        target_dependency_id = @project.root_dictionary[:objects][dependency_id][:target]
+        dependant_target_id = @project.root_dictionary[:objects][target_dependency_id]
+        summary << "\t"*3 << dependant_target_id[:name].value << "\n"
+      end
+      
+      summary
     end
   end
   

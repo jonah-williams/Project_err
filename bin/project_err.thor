@@ -2,9 +2,14 @@
 require "rubygems" # ruby1.9 doesn't "require" it though
 require "thor"
 
+require File.expand_path(File.join('..', 'lib/parser.rb'), File.dirname(__FILE__))
+require File.expand_path(File.join('..', 'lib/pbxproj_validator.rb'), File.dirname(__FILE__))
+
 class ProjectErr < Thor
   desc "print FILE", "prints the structure of a project(.pbxproj) file"
   def print(project_file)
+    path = File.absolute_path project_file
+    puts Parser.parse(File.read path).summary
   end
   
   desc "validate FILE", "validates the structure of a project(.pbxproj) file"
