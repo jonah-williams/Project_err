@@ -15,6 +15,16 @@ end
 
 describe Lint do
   describe "heuristics" do
+    describe "duplicate build targets" do
+      it "fails when it detects duplicate build targets" do
+        result = Lint.duplicate_build_targets(Factory.duplicate_build_targets)
+        assert(result)
+      end
+      it "passes when there are no duplicate build targets" do
+        result = Lint.duplicate_build_targets(Factory.no_duplicate_build_targets)
+        assert(result)
+      end
+    end
     describe "targets don't appear in the project dictionary" do
       it "fails when it detects missing targets" do
         result = Lint.missing_targets(Factory.missing_targets)
